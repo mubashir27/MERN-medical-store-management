@@ -1,4 +1,4 @@
-export const NAME_REGEX = /^([a-zA-Z ]){3,}/;
-export const EMAIL_REGEX =
-  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-export const PWD_REGEX = /^(?=.*\d).{8,}$/;
+const NAME_REGEX = /^([a-zA-Z ]){3,}/;
+const PHONE_REGEX = /^([0-9 ]){3,}/;
+
+module.exports = { NAME_REGEX, PHONE_REGEX };
