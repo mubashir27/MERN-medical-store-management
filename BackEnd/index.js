@@ -1,13 +1,16 @@
-const express = require("express");
+const express = require('express');
+const errorHandler = require('./middleware/errorHandler');
+const connectDB = require('./config/dbConnect');
+const dotenv = require('dotenv').config();
+connectDB();
 const app = express();
-const cors = require("cors");
-
-app.use(cors());
-
+const port = process.env.PORT || 5000;
 app.use(express.json());
+app.use('/order', require('./routes/customerOrder'));
+app.use(errorHandler);
 
-app.listen(3001, () => {
-  console.log("listening on port 30cc01");
+app.listen(port, () => {
+    console.log(`server running in post ${port} `);
 });
 
 // app.use(bodyParser.urlencoded({ extended: true }));
