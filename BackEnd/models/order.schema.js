@@ -2,11 +2,11 @@ const { mongoose } = require('mongoose');
 
 const OrderSchema = mongoose.Schema(
     {
-        cusId: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: 'Medicine',
-        },
+        // cusId: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     required: true,
+        //     ref: 'Medicine',
+        // },
         cusName: {
             type: String,
             required: [true, 'Please add customer name'],

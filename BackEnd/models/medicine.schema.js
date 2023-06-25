@@ -2,10 +2,18 @@ const { mongoose } = require('mongoose');
 
 const MedicineSchema = mongoose.Schema(
     {
+        // medicine_id: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     required: true,
+        //     ref: 'Order',
+        // },
+        mediName: {
+            type: String,
+            required: [true, 'please add Medi name'],
+        },
         mediNo: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: 'Order',
+            type: Number,
+            required: [true, 'please add Medi no'],
         },
         quantity: {
             type: Number,

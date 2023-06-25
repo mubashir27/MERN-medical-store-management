@@ -1,9 +1,15 @@
 const asyncHandler = require('express-async-handler');
-
+const orderModal = require('../models/order.schema');
 const postOrder = asyncHandler(async (req, res) => {
     const { cusName, phoneNo, quantity, price } = req.body;
-    console.log('customer_name', cusName, phoneNo, quantity, price);
-    return res.status(200).json({ message: { cusName, phoneNo, quantity, price } });
+    const order = await orderModal.create({
+        cusName,
+        phoneNo,
+        quantity,
+        price,
+        // medicine_id: req.order.id,
+    });
+    res.status(200).json(order);
 });
 
 const getOrder = asyncHandler(async (req, res) => {

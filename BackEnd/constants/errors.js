@@ -6,5 +6,6 @@ const ERRORS = {
     mfgDate: 'please insert MFG date',
     expDate: 'please insert EXP date',
     mediNo: 'Insert medi no.',
+    mediName: 'Insert Medicine Name',
 };
 module.exports = { ERRORS };
